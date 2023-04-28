@@ -45,7 +45,7 @@ if [[ `go version |grep -c "go1.20.3"` == '0' ]]; then
   sed -i '/usr\/local\/go\/bin/d' "/etc/profile"
   echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
   source /etc/profile
-  go env -w GOPROXY=https://goproxy.cn,direct
+  go env -w GOPROXY=https://proxy.golang.com.cn,direct
   go env -w GOPRIVATE=git.mycompany.com,github.com/my/private
 fi
 
