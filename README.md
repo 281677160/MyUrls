@@ -77,18 +77,12 @@ docker-compose up -d
 
 在Cloudflare中添加域名，并配置SSL/TLS为完全及以上，并在Railway中接入该域名，参考[官方文档](https://docs.railway.app/deploy/exposing-your-app#lets-encrypt-ssl-certificates)。
 
-## Install
+## 一键编译可执行文件（myurls-linux-amd64.tar.gz）
 
-安装项目依赖
-
-```shell script
-make install
-```
-
-生成可执行文件，目录位于 build/ 。默认当前平台，其他平台请参照 Makefile 或执行对应 go build 命令。
+ubuntu的amd64平台编译myurls-linux-amd64.tar.gz，ubuntu的arm64平台编译myurls-linux-arm64.tar.gz。
 
 ```shell script
-bash release.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/281677160/MyUrls/master/release.sh)
 ```
 
 ## Usage
@@ -96,7 +90,7 @@ bash release.sh
 前往 [Release](https://github.com/CareyWang/MyUrls/releases) 下载对应平台可执行文件。
 
 ```shell script
-./build/linux-amd64-myurls -h 
+./build/myurls-linux-amd64.tar.gz -h 
 
 Usage of ./build/linux-amd64-myurls:
   -conn string
