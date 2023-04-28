@@ -8,7 +8,7 @@ if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
 elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
   ARCH_PRINT="aarch64"
   ARCH_PRINT2="arm64"
-  MYURLS_ARCH="myurls-linux-arrch64"
+  MYURLS_ARCH="myurls-arrch64"
 else
   echo -e "\033[31m 不支持此系统,只支持x86_64和arm64的系统 \033[0m"
   exit 1
