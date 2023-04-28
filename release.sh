@@ -16,7 +16,7 @@ elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
   ARCH_PRINT2="arm64"
   MYURLS_ARCH="myurls-linux-arm64"
 else
-  echo -e "\033[31m 不支持此系统,只支持x86_64和arm64的系统 \033[0m"
+  echo -e "\033[31m 不支持此系统,只支持ubuntu和debian的amd64或arm64的系统 \033[0m"
   exit 1
 fi
 
@@ -25,7 +25,7 @@ if [[ "$(. /etc/os-release && echo "$ID")" == "ubuntu" ]]; then
 elif [[ "$(. /etc/os-release && echo "$ID")" == "debian" ]]; then
   echo -e "\033[32m ${ARCH_PRINT}_debian \033[0m"
 else
-  echo -e "\033[31m 不支持该系统,只支持ubuntu和debian系统 \033[0m"
+  echo -e "\033[31m 不支持此系统,只支持ubuntu和debian的amd64或arm64的系统 \033[0m"
   exit 1
 fi
 
