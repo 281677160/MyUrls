@@ -51,7 +51,7 @@ else
 fi
 
 rm -rf /root/MyUrls
-git clone https://ghproxy.com/https://github.com/281677160/MyUrls /root/MyUrls
+git clone https://ghproxy.com/https://github.com/CareyWang/MyUrls /root/MyUrls
 if [[ $? -ne 0 ]];then
   echo -e "\033[31m MyUrls源码下载失败，请检查网络 \033[0m"
   exit 1
