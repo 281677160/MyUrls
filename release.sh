@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [[ ! "$USER" == "root" ]]; then
+  echo
+  echo -e "\033[31m 警告：请使用root用户操作!~~ \033[0m"
+  exit 1
+fi
+
 export arch=$(arch)
 if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
   ARCH_PRINT="linux64"
