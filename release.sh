@@ -84,7 +84,7 @@ if [[ -f "/root/MyUrls/build/${MYURLS_ARCH}" ]]; then
   tar -czvf ${MYURLS_ARCH}.tar.gz myurls
   rm -rf /root/MyUrls/build/*
   mv -f ${MYURLS_ARCH}.tar.gz build/${MYURLS_ARCH}.tar.gz
-  rm -rf /root/MyUrls/build/myurls
+  rm -rf /root/MyUrls/myurls
 else
   echo -e "\033[31m 编译MyUrls失败 \033[0m"
 fi
