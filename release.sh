@@ -8,7 +8,7 @@ if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
 elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
   ARCH_PRINT="aarch64"
   ARCH_PRINT2="arm64"
-  MYURLS_ARCH="myurls-arrch64"
+  MYURLS_ARCH="myurls-linux-arrch64"
 else
   echo -e "\033[31m 不支持此系统,只支持x86_64和arm64的系统 \033[0m"
   exit 1
@@ -23,30 +23,24 @@ else
    exit 1
 fi
 
-apt-get update
+apt-get update -y
 apt-get install -y socat curl wget git sudo
 
-if [[ `go version |grep -c "go1.15.15"` == '0' ]]; then
+if [[ `go version |grep -c "go1.20.3"` == '0' ]]; then
   apt-get remove -y golang-go
   apt-get remove -y --auto-remove golang-go
   rm -rf /usr/local/go
-  
-  wget -c https://ghproxy.com/https://github.com/281677160/MyUrls/releases/download/v1.0/go1.15.15.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.15.15.linux-${ARCH_PRINT2}.tar.gz
-
-  tar -zxvf /root/go1.15.15.linux-${ARCH_PRINT2}.tar.gz -C /usr/local/
-
+  wget -c https://go.dev/dl/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
+  tar -zxvf /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -C /usr/local/
   sed -i '/usr\/local\/go\/bin/d' "/etc/profile"
-cat >>"/etc/profile" <<-EOF
-export PATH=$PATH:/usr/local/go/bin
-EOF
-
+  echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
   source /etc/profile
 fi
 
 apt-get install -y gcc automake autoconf libtool make
 
-if [[ `go version |grep -c "go1.15.15"` -ge '1' ]]; then
-  rm -rf /root/go1.15.15.linux-${ARCH_PRINT2}.tar.gz
+if [[ `go version |grep -c "go1.20.3"` -ge '1' ]]; then
+  rm -rf /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
 else
   rm -rf /usr/local/go
   echo "go环境部署失败"
