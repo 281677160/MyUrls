@@ -35,10 +35,11 @@ if [[ `go version |grep -c "go1.20.3"` == '0' ]]; then
   if [[ $? -ne 0 ]];then
     wget -c https://golang.google.cn/dl/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
   fi
-  tar -zxvf /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -C /usr/local/
+  sodu tar -zxvf /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -C /usr/local/
   sed -i '/usr\/local\/go\/bin/d' "/etc/profile"
   echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
   source /etc/profile
+  go env -w GOPROXY="https://goproxy.io"
 fi
 
 apt-get install -y gcc automake autoconf libtool make
