@@ -8,7 +8,7 @@ if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
 elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
   ARCH_PRINT="aarch64"
   ARCH_PRINT2="arm64"
-  MYURLS_ARCH="myurls-arrch64"
+  MYURLS_ARCH="myurls-linux-arm64"
 else
   echo -e "\033[31m 不支持此系统,只支持x86_64和arm64的系统 \033[0m"
   exit 1
@@ -74,15 +74,15 @@ fi
 if [[ -f "/root/MyUrls/build/${MYURLS_ARCH}" ]]; then
   mkdir -p /root/MyUrls/myurls
   cp -Rf /root/MyUrls/public /root/MyUrls/myurls/public
-  mv -f /root/MyUrls/build/${MYURLS_ARCH} /root/MyUrls/myurls/linux-${ARCH_PRINT}-myurls
-  tar -czvf linux-${ARCH_PRINT}-myurls.tar.gz myurls
+  mv -f /root/MyUrls/build/${MYURLS_ARCH} /root/MyUrls/myurls/${MYURLS_ARCH}
+  tar -czvf ${MYURLS_ARCH}.tar.gz myurls
   rm -rf /root/MyUrls/build/*
-  mv -f linux-${ARCH_PRINT}-myurls.tar.gz build/linux-${ARCH_PRINT}-myurls.tar.gz
+  mv -f ${MYURLS_ARCH}.tar.gz build/${MYURLS_ARCH}.tar.gz
   rm -rf /root/MyUrls/build/myurls
 else
   echo -e "\033[31m 编译MyUrls失败 \033[0m"
 fi
 if [[ -f "/root/MyUrls/build/linux-${ARCH_PRINT}-myurls.tar.gz" ]]; then
-  echo -e "\033[32m ${ARCH_PRINT}（${ARCH_PRINT2}）的MyUrls编译完成 \033[0m"
-  echo -e "\033[32m 已存放在/root/MyUrls/build文件夹里面 \033[0m"
+  echo -e "\033[32m [ ${MYURLS_ARCH} ]编译完成 \033[0m"
+  echo -e "\033[32m 已存放在[/root/MyUrls/build]文件夹里面 \033[0m"
 fi
