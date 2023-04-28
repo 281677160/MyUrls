@@ -30,6 +30,7 @@ if [[ `go version |grep -c "go1.20.3"` == '0' ]]; then
   apt-get remove -y golang-go
   apt-get remove -y --auto-remove golang-go
   rm -rf /usr/local/go
+  rm -rf /usr/bin/go
   wget -c https://go.dev/dl/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
   if [[ $? -ne 0 ]];then
     wget -c https://golang.google.cn/dl/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
