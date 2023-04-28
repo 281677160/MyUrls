@@ -77,7 +77,7 @@ docker-compose up -d
 
 在Cloudflare中添加域名，并配置SSL/TLS为完全及以上，并在Railway中接入该域名，参考[官方文档](https://docs.railway.app/deploy/exposing-your-app#lets-encrypt-ssl-certificates)。
 
-## 一键编译可执行文件（myurls-linux-amd64.tar.gz）
+### 一键编译可执行文件
 
 ubuntu的amd64平台编译myurls-linux-amd64.tar.gz，ubuntu的arm64平台编译myurls-linux-arm64.tar.gz。
 
