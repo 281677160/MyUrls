@@ -90,9 +90,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/281677160/MyUrls/master/rele
 前往 [Release](https://github.com/CareyWang/MyUrls/releases) 下载对应平台可执行文件。
 
 ```shell script
-./build/myurls-linux-amd64.tar.gz -h 
+./build/myurls-linux-amd64 -h 
 
-Usage of ./build/linux-amd64-myurls:
+Usage of ./build/myurls-linux-amd64:
   -conn string
         Redis连接，格式: host:port (default "127.0.0.1:6379")
   -domain string
