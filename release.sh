@@ -25,8 +25,8 @@ if [[ "$(. /etc/os-release && echo "$ID")" == "ubuntu" ]]; then
 elif [[ "$(. /etc/os-release && echo "$ID")" == "debian" ]]; then
   echo -e "\033[32m ${ARCH_PRINT}_debian \033[0m"
 else
-   echo -e "\033[31m 不支持该系统,只支持ubuntu和debian系统 \033[0m"
-   exit 1
+  echo -e "\033[31m 不支持该系统,只支持ubuntu和debian系统 \033[0m"
+  exit 1
 fi
 
 apt-get update -y
