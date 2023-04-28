@@ -33,10 +33,10 @@ apt-get update -y
 apt-get install -y socat curl wget git sudo
 
 if [[ `go version |grep -c "go1.20.3"` == '0' ]]; then
-  apt-get remove -y golang-go
-  apt-get remove -y --auto-remove golang-go
-  rm -rf /usr/local/go
-  rm -rf /usr/bin/go
+  sodu apt-get remove -y golang-go
+  sodu apt-get remove -y --auto-remove golang-go
+  sodu rm -rf /usr/local/go
+  sodu rm -rf /usr/bin/go
   wget -c https://go.dev/dl/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
   if [[ $? -ne 0 ]];then
     wget -c https://golang.google.cn/dl/go1.20.3.linux-${ARCH_PRINT2}.tar.gz -O /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
@@ -49,7 +49,7 @@ if [[ `go version |grep -c "go1.20.3"` == '0' ]]; then
   go env -w GOPRIVATE=git.mycompany.com,github.com/my/private
 fi
 
-apt-get install -y gcc automake autoconf libtool make
+sodu apt-get install -y gcc automake autoconf libtool make
 
 if [[ `go version |grep -c "go1.20.3"` -ge '1' ]]; then
   rm -rf /root/go1.20.3.linux-${ARCH_PRINT2}.tar.gz
