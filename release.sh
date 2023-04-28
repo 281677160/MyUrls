@@ -51,15 +51,20 @@ else
   exit 1
 fi
 
-rm -rf /root/MyUrls
+[[ -d "/root/MyUrls" ]] && sudo rm -rf /root/MyUrls
 git clone https://ghproxy.com/https://github.com/CareyWang/MyUrls /root/MyUrls
 if [[ $? -ne 0 ]];then
   echo -e "\033[31m MyUrls源码下载失败，请检查网络 \033[0m"
   exit 1
+else
+  chmod -R 775 /root/MyUrls
 fi
-chmod -R 775 /root/MyUrls
 
-echo "开始编译MyUrls"
+echo
+echo -e "\033[33m 开始编译MyUrls \033[0m"
+echo
+sleep 3
+
 cd /root/MyUrls
 make install
 if [[ $? -ne 0 ]];then
