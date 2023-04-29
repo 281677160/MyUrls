@@ -87,7 +87,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/281677160/MyUrls/master/rele
 
 ## Usage
 
-运行对应平台可执行文件，比如amd64的，arm平台把amd64改成arm64即可。
+运行对应平台可执行文件，比如amd64的，arm64平台把amd64改成arm64即可。
 
 ```shell script
 ./build/myurls-linux-amd64 -h 
