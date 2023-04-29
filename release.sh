@@ -88,12 +88,9 @@ if [[ -f "/root/MyUrls/build/${MYURLS_ARCH}" ]]; then
   mkdir -p /root/MyUrls/myurls
   cp -Rf /root/MyUrls/public /root/MyUrls/myurls/public
   mv -f /root/MyUrls/build/${MYURLS_ARCH} /root/MyUrls/myurls/${MYURLS_ARCH}
-  rm -rf /root/build
-  cp -Rf /root/MyUrls/myurls /root/build
   tar -czvf ${MYURLS_ARCH}.tar.gz myurls
   rm -rf /root/MyUrls/build/*
   mv -f ${MYURLS_ARCH}.tar.gz build/${MYURLS_ARCH}.tar.gz
-  sudo rm -rf /root/MyUrls/myurls
   echo
   echo -e "\033[32m [ ${MYURLS_ARCH} ]编译完成 \033[0m"
 else
