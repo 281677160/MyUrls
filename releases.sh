@@ -88,17 +88,25 @@ if [[ -f "/root/MyUrls/build/${MYURLS_ARCH}" ]]; then
   mkdir -p /root/MyUrls/myurls
   cp -Rf /root/MyUrls/public /root/MyUrls/myurls/public
   mv -f /root/MyUrls/build/${MYURLS_ARCH} /root/MyUrls/myurls/${MYURLS_ARCH}
+  rm -rf /root/build
+  cp -Rf /root/MyUrls/myurls /root/build
   tar -czvf ${MYURLS_ARCH}.tar.gz myurls
   rm -rf /root/MyUrls/build/*
   mv -f ${MYURLS_ARCH}.tar.gz build/${MYURLS_ARCH}.tar.gz
   sudo rm -rf /root/MyUrls/myurls
+  echo
+  echo -e "\033[32m [ ${MYURLS_ARCH} ]编译完成 \033[0m"
 else
   echo -e "\033[31m 编译MyUrls失败 \033[0m"
 fi
+if [[ -f "/root/build/${MYURLS_ARCH}" ]]; then
+  echo
+  echo -e "\033[32m 直接可以运行文件已存入[/root/build] \033[0m"
+  echo
+fi
+
 if [[ -f "/root/MyUrls/build/${MYURLS_ARCH}.tar.gz" ]]; then
   echo
-  echo -e "\033[32m [ ${MYURLS_ARCH} ]编译完成 \033[0m"
-  echo
-  echo -e "\033[32m 已存放在[/root/MyUrls/build]文件夹里面 \033[0m"
+  echo -e "\033[32m 压缩保存包已存放在[/root/MyUrls/build]文件夹里面 \033[0m"
   echo
 fi
