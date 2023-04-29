@@ -90,7 +90,8 @@ sudo bash -c 'bash <(curl -s https://raw.githubusercontent.com/281677160/MyUrls/
 运行对应平台可执行文件，比如amd64的，arm64平台把amd64改成arm64即可。
 
 ```shell script
-cd /root
+cd /root && sudo rm -rf build
+cp -Rf /root/MyUrls/myurls /root/build && sudo chmod -R +x /root/build
 
 ./build/myurls-linux-amd64 -h 
 
