@@ -87,7 +87,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/281677160/MyUrls/master/rele
 
 ## Usage
 
-前往 [Release](https://github.com/CareyWang/MyUrls/releases) 下载对应平台可执行文件。
+解压对应平台可执行文件，然后运行文件。
 
 ```shell script
 ./build/myurls-linux-amd64 -h 
