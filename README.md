@@ -91,11 +91,11 @@ sudo bash -c 'bash <(curl -s https://raw.githubusercontent.com/281677160/MyUrls/
 
 ```shell script
 cd /root && sudo rm -rf build
-cp -Rf /root/MyUrls/myurls /root/build && sudo chmod -R +x /root/build
+cp -Rf /root/MyUrls/myurls /root/build && sudo chmod -R +x /root/build && cd build
 
-./build/myurls-linux-amd64 -h 
+./myurls-linux-amd64 -h 
 
-Usage of ./build/myurls-linux-amd64:
+Usage of ./myurls-linux-amd64:
   -conn string
         Redis连接，格式: host:port (default "127.0.0.1:6379")
   -domain string
