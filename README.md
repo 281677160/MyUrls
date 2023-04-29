@@ -79,7 +79,7 @@ docker-compose up -d
 
 ### 一键编译可执行文件
 
-ubuntu的amd64平台编译myurls-linux-amd64.tar.gz，ubuntu的arm64平台编译myurls-linux-arm64.tar.gz。
+ubuntu的amd64平台编译myurls-linux-amd64，ubuntu的arm64平台编译myurls-linux-arm64。
 
 ```shell script
 sudo bash -c 'bash <(curl -s https://raw.githubusercontent.com/281677160/MyUrls/master/release.sh)'
